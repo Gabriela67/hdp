@@ -1,0 +1,517 @@
+Progracion Orientada a Objetos 
+
+*Notacion Objeto literal*
+
+const Persona = {
+       nombre: "Diego",
+       apellido: "Herrera",
+       edad: 25
+
+}
+
+Accedemos a las propiedades de esta manera: console.log(persona.nombre)
+
+
+****NOTACION OBJETO CONSTRUCTOR******
+function Persona(nombre,apellido){
+this.nombre = nombre;
+this.apellido = apellido;
+}
+
+const diego = new Persona("Diego", "Herrera");
+
+console.log(diego.nombre)
+
+
+*Prototype*
+
+'''''''''''''''''CLASE ABSTRACT'''''''''''''''''''''''''
+
+<?php
+
+ abstract class Animal{
+    public $nombre;
+    public $color;
+
+    public function describir(){
+        return "el nombre es :". $this->nombre ."el color es: ".$this->color;
+    }
+    ///creacion de un metodo abstracto
+    abstract public function sonido();
+    /// cuando creamos un metodo abstracto significa que toda la clase tiene que ser abstracta
+    ///las clases abstractas no se pueden instancear
+}
+///creacion de una clase que se hara uso de una clase abstracta
+
+class Gato extends Animal{
+
+    public function describir(){
+        return parent::describir();
+        /// para acceder  de esta manera a una funcion de la clase abstracta
+    }
+    public function sonido()
+    {
+        return "miauw <br>";
+    }
+
+}
+class Perro extends Animal{
+
+    public function describir(){
+        return parent::describir();
+        /// para acceder  de esta manera a una funcion de la clase abstracta
+    }
+    public function sonido()
+    {
+        return "<br>Guaww";
+    }
+
+}
+
+$animal = new Gato;
+$animal->nombre = "larry";
+$animal->color = "negro";
+echo $animal->describir();
+echo $animal->sonido();
+
+
+
+?>
+
+
+''''''''''''''''''''''''''''TRAITS'''''''''''''''''''''''''''''''
+
+<?php 
+
+//herencia multiple
+// no se pueden instancear 
+//cuando implementamos un metodo trait este se sobre escribe por un metodo de la clase;
+class Persona{
+    public $nombre;
+    public function setNombre($nombre){
+
+      echo  $this->nombre = strtolower($nombre);
+    }
+    public function getNombre(){
+       return  ucwords($this->nombre);
+    }
+}
+
+
+
+
+trait Latinoamericano{
+    public function saludoamericano(){
+        echo"este es un saludo americano";
+    }
+}
+trait Europeo{
+    public function saludoeuropeo(){
+        echo"esto es un saludo europeo";
+    }
+
+}
+class Peruano  extends Persona{
+
+    use Latinoamericano;
+}
+
+$peruano = new Peruano;
+$obj = new Persona;
+$obj->setNombre('gaby');
+$obj->getNombre();
+$peruano->saludoamericano();
+
+
+
+'''''''''''''''''''''''''''INTERFACE''''''''''''''''''''''''
+<?php
+
+
+    interface Auto
+    {
+     public function encender();
+     public function apagar();
+    }
+
+    interface gasolina extends Auto
+    {
+     public function vaciarTanque();
+     public function llenarTanque($cant);
+    }
+    ///para heredar a una clase se utiliza implemets
+    ///y la clase debe tener todos los metodos definidos en la interface
+    ///obliga a la clase a incluir los metodos que se crean en la interfaz 
+    class Deportivo implements gasolina
+    {
+        private $estado = false;
+        private $tanque = 0 ;
+        public function estado(){
+            if($this->estado) {
+                print"el auto esta encendido y tiene <br> " . $this->tanque. "de litros en el tanque";
+            }else{
+            print"el auto esta apagado";
+            }
+        } 
+        public function encender()
+        {
+            if ($this->estado) {
+                print"no puede encender el auto 2 veces";
+            }else{
+                if ($this->tanque <= 0) {
+                    print"usted no puede encender auto , el tanque por que esta vacio";
+                }else{
+                    print "auto encendido";
+                    $this->estado= true;
+                }
+               
+            }
+        }
+        public function apagar()
+        {
+            if ($this->estado) {
+                print"auto Apagado <br>";
+            }else{ print "el auto ya esta apagado";
+                
+            }
+        }
+            
+        
+        public function vaciarTanque()
+        {
+            $this->tanque= 0;
+        }
+        public function llenarTanque($cant)
+
+        {
+            $this->tanque = $cant;
+        }
+        public function usar($km){
+            if ($this->estado) {
+                $reducir = $km / 3 ;
+                $this->tanque = $this->tanque - $reducir;
+                if ($this->tanque <= 0 ) {
+
+                    $this->estado = false;
+                }
+                
+            }else{ print "El auto esta apagado y no se puede usar ";
+                
+            }
+        }
+        }
+    
+
+
+    $obj = new Deportivo();
+    $obj->llenarTanque(100);
+    $obj->encender();
+    $obj->usar(350);
+    $obj->estado();
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+json 
+
+json_decode — Decodifica una cadena JSON Toma una cadena codificada en JSON y la convierte en un valor de PHP.
+ejemplo 
+
+<?php
+$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+
+var_dump(json_decode($json));
+var_dump(json_decode($json, true));
+
+?>
+
+file_get_contents — Lee el archivo completo en una cadena
+
+ @$miJson= file_get_contents("users.json");
+
+file_put_contents — Escribir datos en un archivo
+
+<?php
+$file = 'people.txt';
+// Open the file to get existing content
+$current = file_get_contents($file);
+// Append a new person to the file
+$current .= "John Smith\n";
+// Write the contents back to the file
+file_put_contents($file, $current);
+?>
+
+
+
+aso 1 : instalar Composer nota:tenemos que instalar php antes
+
+https://getcomposer.org/download/
+
+Download and run ***Composer-Setup.exe*** - it will install the latest composer version whenever it is executed.
+
+
+paso 2: verificar si esta instalado
+en la terminal 
+
+composer -V
+
+paso 3: instalar laravel
+
+composer create-project laravel/laravel=9 nombre documento --prefer-dist 
+
+
+---------------------------------------------------------------------------
+
+instalar axios 
+
+npm init -y
+npm i axios
+
+php artisan migrate:refresh --seed para semprar las semillas de los datos falsos en la base de datos 
+
+ https://github.com/Gaby-04/ParcialPrueba3 link de github con clientes en laravel 
+https://github.com/Gabriela67/practicaParcial3Tpi link del parcial con mvc 
+_________________________________________________________________________________________________________
+el archivo de los usuarios creado con mvc 
+http://localhost/usuarioss/?controller=Users&action=showUsers <--- para abrir el documento en el buscador y mostrar todo los usuarios
+http://localhost/usuarioss/?controller=Users&action=showUsers&id=2 <--- para mostrar con el id en especifico 
+https://github.com/Gabriela67/practicaParcial3Tpi
+__________________________________________________________________________________________________________
+---------------------------------------------
+66710880 
+php artisan make:controller CustomerController --resource  // crear un archivo controller
+
+DIRECTIVAS DE LARAVEL 
+
+
+@yield('nombre del segmento de codigo') remplaza algo que tiene con codigo html en una seccion y lo pone en blade
+@extends('nombre de donde hereda')
+@section('nombre de la seccion') es una seccion de codigo donde se puede remplazar en aun lugar y se remplaza con @yield
+@stop -> cierre de la section 
+
+///clase 2 con laavel
+ ASI SE AGREGA UN CONTROLADOR A UNA VISTA 
+
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('Customer', 'index')->name('index.Customer');
+   
+});
+
+FUNCION PARA TRAER TODO LOS CLIENTES DE LA BASE DE DATOS 
+
+    public function index()
+    {
+        $clientes = Cliente::latest()->get();
+        return view('clientes')->with('clientes', $clientes);
+    }
+wed ---> en wed  Route::get('/clientes', 'index')->name('clientes.index');
+ mostrar elementos 
+
+ @foreach($clientes as $cliente)
+        <td><li> <a href="{{route('cliente.one',$cliente->id)}}">{{$cliente->nombre}}</a></li>
+        <td>{{$cliente->apellido}} </td>
+        <td>{{$cliente->edad}}</td>
+    </tr>
+        @endforeach
+///FUNCION PARA MOSTRAR UN SOLO CLIENTE 
+
+ public function cliente(Cliente $cliente){
+        return view("cliente")->with('cliente',$cliente);
+
+    }
+wed---> Route::get('/clientes/{cliente}',"cliente")->name('cliente.one');
+blade -->
+@section('Cliente')
+<h1>Cliente: {{$cliente->nombre}} </h1>
+<table border=1px >
+    <tr>
+        <th>id</th>
+        <th>nombre</th>
+        <th>apellido</th>
+        <th>edad</th>
+    </tr>
+    <tr>
+        <td>{{$cliente->id}}</td>
+        <td>{{$cliente->nombre}}</td>
+        <td>{{$cliente->apellido}}</td>
+        <td>{{$cliente->edad}}</td>
+        
+    </tr>
+
+///GEnerar url o enpoits
+
+GET /personas
+GET /personas{persona}
+GET /personas/{persona}/{amigos}
+GET /personas/2/amigos/4
+
+
+-----------------------------------------------------------------------------------
+login.blade.php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Login</title>
+  <style>
+    body {
+      background-color: pink;
+    }
+
+    h3 {
+      font-family: 'Nerko One', cursive;
+      padding: 0.5em;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+
+    }
+
+    form {
+
+      margin: 0 auto;
+      width: 600px;
+      padding: 1em;
+      margin-top: 170px;
+      border: 3px solid black;
+      border-radius: 1em;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-sm hola">
+
+
+    <form action="#" method="post">
+      @csrf
+      @METHOD ('POST')
+      <div class="mb-3 row">
+        <center></center>
+        <h3>Bienvenidos a mi pagina</h3>
+        </center> <br>
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" class="form-control" id="Email">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" name="pass" class="form-control" id="contra">
+          </div>
+
+        </div>
+        <div class="mb-3 row">
+          <div class="col-sm-10">
+            <center>
+              <button class="btn btn-primary" type="submit">INGRESAR</button>
+            </center>
+          </div>
+        </div>
+    </form>
+  </div>
+
+
+
+</body>
+
+</html>
+
+
+seccionController
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class SessionController extends Controller
+{
+    //
+    public function index(){
+
+        return view('login');
+    }
+
+    public function store(Request $request){
+        date_default_timezone_set('America/El_Salvador');
+        $miJson= file_get_contents("credenciales.json");
+        $linksJson = file_get_contents("links.json");
+        $miArray = json_decode($miJson,TRUE);
+        $milinks = json_decode($linksJson,true);
+        $fecha = date('m/d/Y g:ia');
+        if(($request->get('email') === $miArray["usuarios"][0]["email"])  && ($request->get('pass')== $miArray["usuarios"][0]["password"]) ){
+            file_put_contents("log.txt", $miArray["usuarios"][0]["nombre"]." ".$fecha ,FILE_APPEND);
+            return view('contact')->with('miArray',$miArray["usuarios"][0]["rol"])->with('linkUser',$milinks['linksUser'][0])->with('linkAdmin',$milinks['linksAdmin'][0]);
+        }
+        elseif(($request->get('email')== $miArray["usuarios"][1]["email"])  && ($request->get('pass')== $miArray["usuarios"][1]["password"])){
+            file_put_contents("log.txt",$miArray["usuarios"][1]["nombre"]." ".$fecha,FILE_APPEND);
+            return view('contact')->with('miArray',$miArray["usuarios"][1])->with('linkUser',$milinks['linksUser'][0]);
+        }
+        elseif(($request->get('email')== $miArray["usuarios"][2]["email"])  && ($request->get('pass')== $miArray["usuarios"][2]["password"])){
+            file_put_contents("log.txt",$miArray["usuarios"][2]["nombre"]." ".$fecha.FILE_APPEND);
+            return view('contact')->with('miArray',$miArray["usuarios"][2])->with('linkUser',$milinks['linksUser'][0]);
+        }
+        else{
+            return view('login');
+        }
+
+wed
+
+Route::get('/', function () {
+    return view('login');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::controller(SessionController::class)->group(function (){
+    Route::post('/', 'store')->name('login.store');
+});
+
+
+---------------------recorrer para los links 
+
+admin
+
+ <div class="col-3">
+            <ul class="lista2">
+                <li><a>Create</a></li>
+                <li><a>Account</a></li>
+                <li><a >Or</a></li>
+                <li><a>Sign-in</a></li>
+            </ul>
+            @if($miArray === 'admin')
+            <ul class="lista3">
+            @foreach ($linkAdmin as $linksadmin)
+                    <li><a>{{$linksadmin}}</a></li>
+            @endforeach
+                
+               
+            </ul>
+            @endif
+        </div>
+
+
+  <ul class="lista1">
+                @foreach ($linkUser as $linksUsers)
+                <li style="color: gray">{{$linksUsers}}</li>
+                @endforeach
+                
+            </ul>
+        </div>
+
+
+
+
