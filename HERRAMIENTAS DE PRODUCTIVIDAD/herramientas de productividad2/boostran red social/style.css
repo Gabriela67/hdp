@@ -1,0 +1,110 @@
+.gris{
+    background-color:  #5b6363;
+}
+.logo{
+   color: #5DADE2;
+}
+.imagen1{
+
+    width: 100px;
+    height: 150px;
+    margin-left: 20px;
+    border-radius: 10%
+}
+.paisaje{
+position: absolute;
+right: 0px;
+top: 0px;
+border-radius: 5%;
+height: 75px;
+}
+#contenedor{
+    border-radius: 5%;
+}
+.perfil{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    left: 85px;
+    top: 50px;
+    border: 3px solid white;
+}
+.titulo{
+    position: relative;
+    top: 130px;
+    left: 50px;
+   font-family: 'Times New Roman', Times, serif
+}
+.sub-titulo{
+    position: relative;
+    top: 120px;
+}
+.numeros{
+    font-family: 'Caveat', cursive;
+
+    color: black;
+    position: relative;
+    top: 120px;
+}
+.social{
+         
+        position: relative;
+        top: 120px;
+    
+}
+ .a{
+    margin-left: 2px;
+    text-decoration: none;
+    color:black;
+ }
+.btn-1{
+width: 40px;
+height: 40px;
+margin-top: 10px;
+border-radius: 50px;
+margin-left: 10px;
+background-color: #E8F9FD;
+}
+
+.btn-2{
+width: 40px;
+height: 40px;
+ margin-top: 10px;
+ border-radius: 50px;
+ margin-left: 50px;
+ background-color: #E8F9FD;
+}
+.imagen{
+    margin-left: 20px;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+h5{
+    margin: 20px;
+}
+.noticia{
+    background-color: #5DADE2;
+    height: 500px;
+}
+.imagen2{
+    width: 75px;
+    height: 75px;
+    left: 20px;
+    border-radius: 50%;
+
+}
+.icono3{
+
+    width: 200px;
+    height: 200px;
+   margin-left: 130px;
+}
+.event{
+    color: rgb(156, 30, 66);
+}
+.carita{
+    color: yellow;
+}
+
+

@@ -1,0 +1,123 @@
+.hanoi{
+   position: absolute;  
+   left: 350px;
+  
+
+}
+body{
+
+  background-color:  #A0BCC2;
+}
+
+.titulo{
+
+    background-color: #F9EBC8;
+    color: #001D6E;
+}
+
+h1 {
+    margin: 0;
+    padding: 5px;
+    font-size: 5vmin;
+    font-weight: lighter;
+    text-align: center;
+
+}
+.bienvenido{
+
+    font-family: 'Lobster', cursive;
+}
+.nombre{
+
+    font-family: 'Caveat', cursive;
+    font-size:3vmin ;
+}
+.torres{
+
+    position: relative;
+    display: inline-block;
+    top: 2vmin;
+    border-radius: 1vmin;
+    width: 7vmin;
+    height: 35vmin;
+    background: linear-gradient(to right, #906f3d, #5a3b0c, #4f3712);
+   
+}
+#a {
+    left: 12.5vmin;
+}
+#b {
+    left: 42.5vmin;
+}
+#c {
+    left: 72.5vmin;
+}
+.suelo{
+    position: relative;
+    top: 1.2vmin;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1vmin;
+    width: 105vmin;
+    height: 7.5vmin;
+    background: linear-gradient(to right, #5c4c36, #7b6748, #544227);
+}
+
+#discs {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    margin: 5vmin auto 0;
+    width: 96vmin;
+    height: 20vmin;
+   top: 242px;
+   right: 13px;
+}
+
+
+#one {
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 4vmin;
+    pointer-events: none;
+    margin: 0 10vmin;
+    width: 10vmin;
+    background-color: #D2B4DE;
+}
+#two {
+    margin: 0 8vmin;
+    width: 14vmin;
+    background-color: #BB8FCE;
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 4vmin;
+    pointer-events: none;
+}
+#three {
+    margin: 0 6vmin;
+    width: 18vmin;
+    background-color: #A569BD;
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 4vmin;
+    pointer-events: none;
+}
+#four {
+    margin: 0 4vmin;
+    width: 22vmin;
+    background-color: #8E44AD;
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 4vmin;
+    pointer-events: none;
+}
+#five {
+    margin: 0 2vmin;
+    width: 26vmin;
+    background-color: #7D3C98;
+    z-index: 1;
+    border-radius: 1vmin;
+    height: 4vmin;
+    pointer-events: none;
+}

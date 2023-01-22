@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 2s</title>
+</head>
+<body>
+    <script>
+/*Recuperar el dinero se hace más difícil durante los periodos de recesión, de manera que las empresas
+deben reducir sus límites de crédito para prevenir que sus cuentas por cobrar (el dinero prestado) se
+hagan muy grandes. En respuesta a la prolongada recesión, una empresa recortó sus límites de crédito a
+la mitad. De esta manera, si un cliente en particular tenía un límite de crédito de $2000, ahora su límite
+es de $1000. Si un cliente tenía un límite de crédito de $5000, este cliente tiene ahora un límite de
+crédito de $2500. Escriba un programa que analice el estado del crédito de tres clientes de esta empresa.
+Por cada cliente a usted se le brinda:
+a El número de cuenta del cliente.
+b El límite de crédito antes de la recesión.
+c El saldo actual del cliente (es decir, el monto que le debe el cliente a la empresa).
+Su programa debe calcular e imprimir el nuevo límite de crédito para cada cliente, y debe determinar (e
+imprimir) cuáles clientes tienen saldos que exceden los nuevos límites de crédito*/
+
+numeroC= prompt("escriba su numero de cuenta") ;
+CreditoA= prompt("limite de credito Anterior");
+saldo = prompt("saldo actual")
+
+
+var limiteA = CreditoA/2;
+console.log(CreditoA);
+if(saldo >limiteA){
+    alert("su nuevo saldo es "+limiteA );
+    alert("su saldo excede ")
+}else{
+    alert("felicidades si le podemos prestar cliente con numero de cuenta"+numeroC)
+}
+
+numeroCB= prompt("escriba su numero de cuenta") ;
+CreditoB= prompt("limite de credito Anterior");
+saldoB = prompt("saldo actual");
+
+
+var limiteB= CreditoB/2;
+if(saldoB >limiteB){
+    alert("su nuevo saldo es "+limiteB );
+    alert("su saldo excede ")
+}
+else{
+    alert("felicidades si le podemos prestar cliente con numero de cuenta"+numeroCB) 
+}
+
+numeroCC= prompt("escriba su numero de cuenta") ;
+CreditoC= prompt("limite de credito Anterior");
+saldoC = prompt("saldo actual");
+var limiteC= CreditoC/2;
+if(saldoC >limiteC){
+    alert("su nuevo saldo es "+limiteC );
+    alert("su saldo excede ")
+}
+else{
+    alert("felicidades si le podemos prestar cliente con numero de cuenta"+numeroCC) 
+}
+
+    </script>
+</body>
+</html>

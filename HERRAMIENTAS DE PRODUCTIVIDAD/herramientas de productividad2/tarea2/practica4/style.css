@@ -1,0 +1,32 @@
+#header{
+    background-color: rgb(105, 78, 230);
+    font-family: 'Smooch Sans', sans-serif;
+   
+    
+}
+
+aside{
+    
+    font-family: 'Syne Mono', monospace;
+   color: black;
+   background-color: blanchedalmond;
+   width: 47%;
+  
+    
+}
+
+section{
+    background-color:cadetblue;
+    font-family: 'Syne Mono', monospace;
+}
+td tr{
+    display:inline;
+}
+footer>p{
+    display: inline;
+    margin: 15px;
+}
+#imforma{
+    color: aliceblue;
+    margin-left: 40%;
+}

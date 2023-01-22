@@ -1,0 +1,66 @@
+body{
+
+    background-color: white;
+}
+.fondo{
+    color: white;
+}
+.contenedor{
+    background-color: #2A2550;
+    height: 600px;
+    border-radius: 10%;
+}
+.img{
+    margin:  0 auto;
+    border-radius: 50%;
+    width: 50%;
+    height: 30%;
+    border: 5px solid white ;
+   
+}
+.titulo{
+    margin-left: 60px;
+    color: white;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    margin-bottom: 3px;
+}
+.imformacion{
+    color: rgb(172, 167, 167);
+    margin-left: 60px;
+   
+}
+.redes{
+color: white;
+margin-left: 35px;
+margin-bottom: 1px;
+}
+.correo{
+    color: white;
+    margin-left: 60px;
+    
+
+}
+.sigueme{
+    margin-left: 40px;
+    border-radius: 15%;
+    width: 200px;
+    height: 40px;
+    background: linear-gradient(blue 5%, magenta 70%,pink);
+    margin-bottom: 20px;
+
+}
+.icono{
+    width: 75px;
+    height: 75px;
+    background-color: blueviolet;
+   
+border-radius: 50px;
+}
+.btn{
+      
+border-radius:50% ; 
+background: linear-gradient(blue 5%, magenta 70%,pink);
+margin: 5px;
+}
+
+

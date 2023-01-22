@@ -1,0 +1,225 @@
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.titulo{
+
+    display: flex;
+   justify-content: center;
+    /**align-content: center;**/
+    height: 150px;
+    background-color: #ffa5a5;
+    /**text-align: center;**/
+    border: 5px solid black;
+    width: 100%;
+    
+   
+}
+
+.container
+{
+background-color: bisque;
+    width: 100%;
+    height: 573px;
+    box-sizing: border-box;
+    /*padding-right: 3px;*/
+    border: 5px solid black;
+   
+}
+
+.container2
+{
+background-color: #e4bad4;
+    width: 100%;
+    height: 660px;
+    box-sizing: border-box;
+    /*padding-right: 3px;*/
+    border: 5px solid black;
+   
+}
+
+.hola{
+    
+  margin: 0;
+  font-size: 4em;
+  text-align: center;
+  color: transparent;
+  font-weight: normal;
+  background: -webkit-linear-gradient(#5c969e 20%, #fcdada, #5c969e 89%);
+  background: linear-gradient(#5c969e 20%, #fcdada, #5c969e 89%);
+  -webkit-background-clip: text;
+  position: relative;
+  top: 30px;
+   
+}
+
+.titulo:hover {
+
+     font-size: 20px;
+     font-family: 'Dancing Script', cursive;
+     transition: all 0.3s;
+    
+}
+.boton1{
+
+    background-color:  #ec4646;
+    position: relative;
+    width: 20%;
+    height: 10%;
+    bottom: 250px;
+    left: 300px;
+    color:black;
+    
+}
+
+.boton2{
+
+    background-color:#9fd8df;
+    position: center;
+    width: 20%;
+    height: 10%;
+    bottom: 250px;
+    left: 850px;
+    color:black;
+    
+}
+.boton3{
+    background-color:  #ff7171;
+    position: relative;
+    width: 20%;
+    height: 10%;
+    bottom: 100px;
+    right: 570px;
+    color:black;
+    
+}
+.boton1:hover{
+
+    border: 5px solid black;
+    background-color: #bd2000;
+}
+.boton2:hover{
+
+    border: 5px solid black;
+    background-color: #5c969e;
+}
+.boton3:hover{
+
+    border: 5px solid black;
+    background-color: #f5c0c0;
+}
+#juego td {
+    
+    border: thin  solid black;
+    font-size: 300%;
+    height: 50px;
+    padding: 50px;
+    width: 50px;
+
+}
+#juego{
+  position: relative;
+  left: 450px;
+  top:  80px;
+  background-color: #ffa5a5;
+  
+}
+
+#c1:hover, #c2:hover, #c3:hover, #c4:hover, #c5:hover, #c6:hover, #c7:hover, #c8:hover, #c9:hover{
+    background-color: #ffaec0;
+    border: 3px solid black;
+     }
+
+     h1{
+       
+            /**font-family: 'Redressed', cursiva;**/
+            font-size: 30px;
+            font-weight: bold;
+            color:salmon;
+         }
+  
+   #titulo2{
+text-align: center;
+
+   }
+   #btn5{
+
+    background-color:  #3d7ea6;
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    top: 150px;
+    left: 270px;
+    color:black;
+   }
+  
+
+   #cont1{
+    position: relative;
+    width: 140px;
+    height: 50px;
+    bottom: 450px;
+    left: 600px;
+    font-size:  25px;
+    color: #af0069;
+   }
+   .x{
+color: #ec4646;
+position: absolute;
+font-size: 65px;
+top: 180px;
+left: 350px;;
+
+   }
+
+
+   .O{
+color:#3d7ea6;
+position: absolute;
+font-size:  90px;
+right: 50px;
+left:  930px;
+top: 180px;
+   }
+
+
+   @media only screen and (max-width: 600px) {
+       .boton1, .boton2  ,.boton3 ,.O ,.x ,.container ,.container2,   .hola{
+
+        width: 100%;
+        height: 700px;
+       
+       }
+       .boton1 ,.boton2 , .boton3{
+        width: 20%;
+        height: 10%;
+        
+
+       }
+      .contenedor{
+        width: 20%;
+        height: 10%;
+        
+      }
+     
+
+   }
+
+   @media only screen and (max-width: 600px) {
+
+
+    .juego{
+
+    
+        width: 100%;
+        height: 250px;
+
+     }
+
+
+   
+   }
+
+   

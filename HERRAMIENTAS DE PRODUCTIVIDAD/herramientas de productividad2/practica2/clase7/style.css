@@ -1,0 +1,20 @@
+/*
+display para el conenedor
+jutifi contes
+*/
+.container{
+   /*conertimos en una cala flexible*/
+    display: flex;
+    background-color: blueviolet;
+    justify-content:space-around;
+    align-items: flex-end;
+   flex-direction: row;
+
+}
+.box{
+    color: bisque;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+
+}
